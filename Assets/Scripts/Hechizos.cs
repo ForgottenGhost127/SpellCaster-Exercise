@@ -14,9 +14,9 @@ public class Hechizos : MonoBehaviour
         
     }
 
-    public void SpellCasting()
+    public void SpellCasting() //Esta función estar enfocada en el comportamiento específico de cada hechizo: daño al enemigo, efectos especiales...
     {
-        print("Usó " + hechizoName);
+        print("Has usado " + hechizoName);
 
     }
 

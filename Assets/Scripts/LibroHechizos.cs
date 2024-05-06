@@ -8,12 +8,19 @@ public class LibroHechizos : MonoBehaviour
     public List<string> hechizosLearned;
 
     //Methods
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            MostrarHechizosAp();
+        }
+    }
     public void AprenderHechizo(string hechizoName)
     {
 
     }
     public void MostrarHechizosAp()
     {
-
+        print("Has abierto el libro");
     }
 }
