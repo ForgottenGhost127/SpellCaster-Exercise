@@ -47,27 +47,30 @@ public class Mago : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
+            GetComponent<Mago>().LanzarHechizo("hechizoName");
             //LanzarHechizo();
         }
     }
+
     public void LanzarHechizo(string hechizoName) //Esta función maneja la entrada del jugador (presionar una tecla específica) y la creación/lanzamiento del hechizo correspondiente. 
     {
-        //if (spellDisponibles.Length>0)
-        //{
-        //    Hechizos spellSelected = null;
-        //    foreach (Hechizos hechizo in spellDisponibles)
-        //    {
-        //        if(hechizo.hechizoName == hechizoName)
-        //        {
-        //            spellSelected = hechizo;
-        //            break;
-        //        }
-        //    }
-        //}
+        if (spellDisponibles != null && spellDisponibles.Length > 0)
+        {
+            int indiceHechizo = Random.Range(0, spellDisponibles.Length);
+            Hechizos spellSelected = spellDisponibles[indiceHechizo];
+
+            spellSelected.SpellCasting();
+        }
+        else 
+        {
+            Debug.Log("No hay hechizos disponibles para castear");
+        }
     }
 
-    public void RecargarMana()
+    public void RecargarMana(float cantidad)
     {
+        _mana += cantidad;
 
+        Debug.Log("Mana recargado en " + _mana);
     }
 }

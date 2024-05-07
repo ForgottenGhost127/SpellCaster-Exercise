@@ -6,7 +6,10 @@ public class Hechizos : MonoBehaviour
 {
     //Attributes
     public string hechizoName;
-    private float poder;
+    public float poder;
+
+    public GameObject prefabHechizo;
+    
 
     // Update is called once per frame
     void Update()
@@ -16,12 +19,31 @@ public class Hechizos : MonoBehaviour
 
     public void SpellCasting() //Esta función estar enfocada en el comportamiento específico de cada hechizo: daño al enemigo, efectos especiales...
     {
-        print("Has usado " + hechizoName);
+        if (hechizoName== "DragonBreath")
+        {
+            Debug.Log("Has lanzado DragonBreath causando " + poder + "de damage!");
+        }
+        if (hechizoName == "IcySpears")
+        {
+            Debug.Log("Has lanzado IcySpears causando " + poder + "de damage!");
+        }
+        if (hechizoName == "FirefliesBlessing")
+        {
+            Instantiate(prefabHechizo, transform.position, Quaternion.identity);
+            GetComponent<Mago>().RecargarMana(poder);
+            Debug.Log("Has usado FirefliesBlessing recuperando " + poder + "de maná!");
+        }
+        else
+        {
+            Debug.Log("Algo no va bien... no estás lanzando hechizos!");
+        }
 
+        Instantiate(prefabHechizo, transform.position, Quaternion.identity);
+        Debug.Log("Has usado " + hechizoName + " causando " + poder + "p de daño!");
     }
 
     public void MostrarNombre()
     {
-
+        Debug.Log("Nombre del hechizo: " + hechizoName);
     }
 }
