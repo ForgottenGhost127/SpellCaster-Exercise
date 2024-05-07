@@ -509,6 +509,7 @@ MonoBehaviour:
   hechizoName: IcySpears
   poder: 0
   prefabHechizo: {fileID: 1820680284854294, guid: 484a01343a6c37c4e81e7a07a6a85c4d, type: 3}
+  mago: {fileID: 1533667838}
 --- !u!4 &1417000429
 Transform:
   m_ObjectHideFlags: 0
@@ -580,6 +581,7 @@ MonoBehaviour:
   hechizoName: FirefliesBlessing
   poder: 15
   prefabHechizo: {fileID: 1775406099119076, guid: b89d59c683c0d0d4a85141db95d71fe8, type: 3}
+  mago: {fileID: 1533667838}
 --- !u!4 &1444871719
 Transform:
   m_ObjectHideFlags: 0
@@ -649,6 +651,7 @@ MonoBehaviour:
   hechizoName: DragonBreath
   poder: 40
   prefabHechizo: {fileID: 1634767862067424, guid: 46a68a4b3f849cf4eb934f8a6fa3b501, type: 3}
+  mago: {fileID: 1533667838}
 --- !u!4 &1513715446
 Transform:
   m_ObjectHideFlags: 0
@@ -658,7 +661,7 @@ Transform:
   m_GameObject: {fileID: 1513715444}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.64, y: 2.07, z: 1.81}
+  m_LocalPosition: {x: -0.48, y: 2.07, z: 1.81}
   m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

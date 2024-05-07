@@ -25,25 +25,25 @@ public class Mago : MonoBehaviour
 
         transform.Translate(moverse);
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            transform.Translate(moverse);
-        }
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    transform.Translate(moverse);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            transform.Translate(moverse);
-        }
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    transform.Translate(moverse);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            transform.Translate(moverse);
-        }
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    transform.Translate(moverse);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.Translate(moverse);
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    transform.Translate(moverse);
+        //}
 
         if (Input.GetKeyDown(KeyCode.H))
         {
