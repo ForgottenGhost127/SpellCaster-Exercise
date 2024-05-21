@@ -29,8 +29,8 @@ public class Mago : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            GetComponent<Mago>().LanzarHechizo("hechizoName");
-            //LanzarHechizo();
+            //GetComponent<Mago>().LanzarHechizo("hechizoName");
+            LanzarHechizo("hechizoName");
         }
     }
 
