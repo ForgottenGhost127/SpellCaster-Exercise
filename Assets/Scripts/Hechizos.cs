@@ -21,6 +21,7 @@ public class Hechizos : MonoBehaviour
     {
         if (hechizoName== "DragonBreath")
         {
+            Instantiate(prefabHechizo, transform.position, Quaternion.identity);
             Debug.Log("Has lanzado DragonBreath causando " + poder + "de damage!");
         }
         else if (hechizoName == "IcySpears")
@@ -38,8 +39,8 @@ public class Hechizos : MonoBehaviour
             Debug.Log("Algo no va bien... no estás lanzando hechizos!");
         }
 
-        Instantiate(prefabHechizo, transform.position, Quaternion.identity);
-        Debug.Log("Has usado " + hechizoName + " causando " + poder + "p de daño!");
+        
+        
     }
 
     public void MostrarNombre()
