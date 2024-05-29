@@ -8,11 +8,10 @@ public class Mago : MonoBehaviour
     public string nombreMago;
     public float Mana;
     public float velocidad = 5f;
-
+    
     public Hechizos[] spellDisponibles;
 
     private string _name;
-    private float _mana;
     private LibroHechizos spellsBook;
 
     //Methods
@@ -69,11 +68,15 @@ public class Mago : MonoBehaviour
         }
     }
 
+    public void RestarMana(float cantidad)
+    {
+        Mana -= cantidad;
+    }
     public void RecargarMana(float cantidad)
     {
-        _mana += cantidad;
+        Mana += cantidad;
 
-        Debug.Log("Mana recargado en " + _mana);
+        Debug.Log("Mana recargado en " + Mana);
     }
 
     
