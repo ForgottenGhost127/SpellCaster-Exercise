@@ -369,6 +369,7 @@ MonoBehaviour:
   hechizosLearned:
   - DragonBreath
   - FirefliesBlessing
+  - IcySpears
 --- !u!4 &943531858
 Transform:
   m_ObjectHideFlags: 0
@@ -507,7 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hechizoName: IcySpears
-  poder: 0
+  poder: 20
   prefabHechizo: {fileID: 1820680284854294, guid: 484a01343a6c37c4e81e7a07a6a85c4d, type: 3}
   mago: {fileID: 1533667838}
 --- !u!4 &1417000429
@@ -922,6 +923,7 @@ MonoBehaviour:
   spellDisponibles:
   - {fileID: 1513715445}
   - {fileID: 1444871718}
+  - {fileID: 1417000428}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

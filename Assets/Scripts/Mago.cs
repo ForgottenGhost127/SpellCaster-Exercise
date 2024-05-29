@@ -27,20 +27,41 @@ public class Mago : MonoBehaviour
 
         
 
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            LanzarHechizo("hechizoName");
+            LanzarHechizo("IcySpears", 3f);
+        } else if (Input.GetKeyDown(KeyCode.O))
+        {
+            LanzarHechizo("DragonBreath", 4f);
+        } else if (Input.GetKeyDown(KeyCode.P))
+        {
+            LanzarHechizo("FirefliesBlessing", 2f);
         }
+
     }
 
-    public void LanzarHechizo(string hechizoName) //Esta función maneja la entrada del jugador (presionar una tecla específica) y la creación/lanzamiento del hechizo correspondiente. 
+    public void LanzarHechizo(string hechizoName, float duracion) //Esta función maneja la entrada del jugador (presionar una tecla específica) y la creación/lanzamiento del hechizo correspondiente. 
     {
         if (spellDisponibles != null && spellDisponibles.Length > 0)
         {
-            int indiceHechizo = Random.Range(0, spellDisponibles.Length);
-            Hechizos spellSelected = spellDisponibles[indiceHechizo];
+            Hechizos spellSelected = null;
+            foreach (Hechizos spell in spellDisponibles)
+            {
+                if(spell.hechizoName==hechizoName)
+                {
+                    spellSelected = spell;
+                    break;
+                }
+            }
 
-            spellSelected.SpellCasting();
+            if(spellSelected != null)
+            {
+                StartCoroutine(spellSelected.SpellCasting(duracion));
+            }
+            else
+            {
+                Debug.Log("El hechizo no está disponible en el libro de hechizos");
+            }
         }
         else 
         {
@@ -54,4 +75,6 @@ public class Mago : MonoBehaviour
 
         Debug.Log("Mana recargado en " + _mana);
     }
+
+    
 }

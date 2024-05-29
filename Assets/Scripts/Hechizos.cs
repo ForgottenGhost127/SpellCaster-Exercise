@@ -11,40 +11,50 @@ public class Hechizos : MonoBehaviour
     public GameObject prefabHechizo;
     public GameObject mago;
 
-    // Update is called once per frame
-    void Update()
+    public void MostrarNombre()
     {
-        
+        Debug.Log("Nombre del hechizo: " + hechizoName);
     }
 
-    public void SpellCasting() //Esta función estar enfocada en el comportamiento específico de cada hechizo: daño al enemigo, efectos especiales...
+    public IEnumerator SpellCasting(float duracion) //Esta función estar enfocada en el comportamiento específico de cada hechizo: daño al enemigo, efectos especiales...
     {
+        GameObject spellInstanciado = null;
         if (hechizoName== "DragonBreath")
         {
-            Instantiate(prefabHechizo, transform.position, Quaternion.identity);
+            spellInstanciado = Instantiate(prefabHechizo, transform.position, Quaternion.identity);
             Debug.Log("Has lanzado DragonBreath causando " + poder + "de damage!");
+            yield return new WaitForSeconds(duracion);
+            Debug.Log("DragonBreath ha terminado");
         }
         else if (hechizoName == "IcySpears")
         {
+            spellInstanciado = Instantiate(prefabHechizo, transform.position, Quaternion.identity);
             Debug.Log("Has lanzado IcySpears causando " + poder + "de damage!");
+            yield return new WaitForSeconds(duracion);
+            Debug.Log("IcySpears ha terminado");
         }
         else if (hechizoName == "FirefliesBlessing")
         {
-            Instantiate(prefabHechizo, transform.position, Quaternion.identity);
+            spellInstanciado = Instantiate(prefabHechizo, transform.position, Quaternion.identity);
             mago.GetComponent<Mago>().RecargarMana(poder);
             Debug.Log("Has usado FirefliesBlessing recuperando " + poder + "de maná!");
+            yield return new WaitForSeconds(duracion);
+            Debug.Log("FirefliesBlessing ha terminado");
         }
         else
         {
             Debug.Log("Algo no va bien... no estás lanzando hechizos!");
         }
 
+        if(spellInstanciado != null)
+        {
+            Destroy(spellInstanciado);
+        }
+
         
         
     }
 
-    public void MostrarNombre()
-    {
-        Debug.Log("Nombre del hechizo: " + hechizoName);
-    }
+   
+
 }
