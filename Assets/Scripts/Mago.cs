@@ -55,7 +55,8 @@ public class Mago : MonoBehaviour
 
             if(spellSelected != null)
             {
-                StartCoroutine(spellSelected.SpellCasting(duracion));
+                Vector3 posicionMago = transform.position;
+                StartCoroutine(spellSelected.SpellCasting(posicionMago, duracion));
             }
             else
             {

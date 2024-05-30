@@ -12,12 +12,16 @@ public class Hechizos : MonoBehaviour
     public GameObject prefabHechizo;
     public GameObject mago;
 
+    //public void start()
+    //{
+    //    mago = GameObject.FindGameObjectWithTag("Player");
+    //}
     public void MostrarNombre()
     {
         Debug.Log("Nombre del hechizo: " + hechizoName);
     }
 
-    public IEnumerator SpellCasting(float duracion) //Esta función estar enfocada en el comportamiento específico de cada hechizo: daño al enemigo, efectos especiales...
+    public IEnumerator SpellCasting(Vector3 posicionMago, float duracion) //Esta función estar enfocada en el comportamiento específico de cada hechizo: daño al enemigo, efectos especiales...
     {
         Mago magoScript = mago.GetComponent<Mago>();
 
@@ -28,21 +32,21 @@ public class Hechizos : MonoBehaviour
             GameObject spellInstanciado = null;
             if (hechizoName == "DragonBreath")
             {
-                spellInstanciado = Instantiate(prefabHechizo, transform.position, Quaternion.identity);
+                spellInstanciado = Instantiate(prefabHechizo, posicionMago, Quaternion.identity);
                 Debug.Log("Has lanzado DragonBreath causando " + poder + "de damage!");
                 yield return new WaitForSeconds(duracion);
                 Debug.Log("DragonBreath ha terminado");
             }
             else if (hechizoName == "IcySpears")
             {
-                spellInstanciado = Instantiate(prefabHechizo, transform.position, Quaternion.identity);
+                spellInstanciado = Instantiate(prefabHechizo, posicionMago, Quaternion.identity);
                 Debug.Log("Has lanzado IcySpears causando " + poder + "de damage!");
                 yield return new WaitForSeconds(duracion);
                 Debug.Log("IcySpears ha terminado");
             }
             else if (hechizoName == "FirefliesBlessing")
             {
-                spellInstanciado = Instantiate(prefabHechizo, transform.position, Quaternion.identity);
+                spellInstanciado = Instantiate(prefabHechizo, posicionMago, Quaternion.identity);
                 mago.GetComponent<Mago>().RecargarMana(poder);
                 Debug.Log("Has usado FirefliesBlessing recuperando " + poder + "de maná!");
                 yield return new WaitForSeconds(duracion);
