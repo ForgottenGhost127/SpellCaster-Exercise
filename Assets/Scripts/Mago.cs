@@ -69,6 +69,7 @@ public class Mago : MonoBehaviour
         }
     }
 
+
     public void RestarMana(float cantidad)
     {
         Mana -= cantidad;

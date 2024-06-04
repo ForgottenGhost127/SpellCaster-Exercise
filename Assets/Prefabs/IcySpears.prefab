@@ -49,7 +49,7 @@ MonoBehaviour:
   poder: 20
   manaUsed: 10
   prefabHechizo: {fileID: 1820680284854294, guid: 484a01343a6c37c4e81e7a07a6a85c4d, type: 3}
-  mago: {fileID: 0}
+  mago: {fileID: 3011898644531143886}
 --- !u!136 &8236402688477003477
 CapsuleCollider:
   m_ObjectHideFlags: 0

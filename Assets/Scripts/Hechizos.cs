@@ -9,13 +9,13 @@ public class Hechizos : MonoBehaviour
     public float poder;
     public float manaUsed;
 
-    public GameObject prefabHechizo;
+    public GameObject prefabHechizo; //Debería estar en el de mago
     public GameObject mago;
 
-    //public void start()
-    //{
-    //    mago = GameObject.FindGameObjectWithTag("Player");
-    //}
+    public void Awake()
+    {
+        mago = GameObject.FindGameObjectWithTag("Player");
+    }
     public void MostrarNombre()
     {
         Debug.Log("Nombre del hechizo: " + hechizoName);
@@ -32,7 +32,7 @@ public class Hechizos : MonoBehaviour
             GameObject spellInstanciado = null;
             if (hechizoName == "DragonBreath")
             {
-                spellInstanciado = Instantiate(prefabHechizo, posicionMago, Quaternion.identity);
+                spellInstanciado = Instantiate(prefabHechizo, posicionMago, Quaternion.identity); //Los instantiate deben ir en el script de mago.
                 Debug.Log("Has lanzado DragonBreath causando " + poder + "de damage!");
                 yield return new WaitForSeconds(duracion);
                 Debug.Log("DragonBreath ha terminado");
