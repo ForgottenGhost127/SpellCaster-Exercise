@@ -24,50 +24,16 @@ public class Mago : MonoBehaviour
 
         transform.Translate(moverse);
 
-        
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            LanzarHechizo("IcySpears", 3f);
-        } else if (Input.GetKeyDown(KeyCode.O))
-        {
-            LanzarHechizo("DragonBreath", 4f);
-        } else if (Input.GetKeyDown(KeyCode.P))
-        {
-            LanzarHechizo("FirefliesBlessing", 2f);
-        }
+        //Aquí hemos de referir a los Keycode que se usaran para lanzar cada hechizo y controlar el libro (abrir y cerrar)
 
     }
 
     public void LanzarHechizo(string hechizoName, float duracion) //Esta función maneja la entrada del jugador (presionar una tecla específica) y la creación/lanzamiento del hechizo correspondiente. 
     {
-        if (spellDisponibles != null && spellDisponibles.Length > 0)
-        {
-            Hechizos spellSelected = null;
-            foreach (Hechizos spell in spellDisponibles)
-            {
-                if(spell.hechizoName==hechizoName)
-                {
-                    spellSelected = spell;
-                    break;
-                }
-            }
-
-            if(spellSelected != null)
-            {
-                Vector3 posicionMago = transform.position;
-                StartCoroutine(spellSelected.SpellCasting(posicionMago, duracion));
-            }
-            else
-            {
-                Debug.Log("El hechizo no está disponible en el libro de hechizos");
-            }
-        }
-        else 
-        {
-            Debug.Log("No hay hechizos disponibles para castear");
-        }
+        //Instanciar los tres hechizos para que el mago los pueda llamar incluso si los prefabs no están en el menu Hierarchy.
+        
     }
+
 
 
     public void RestarMana(float cantidad)
