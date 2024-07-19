@@ -8,6 +8,7 @@ public class Mago : MonoBehaviour
     public string nombreMago;
     public float Mana;
     public float velocidad = 5f;
+    public float vida;
 
     public Hechizos[] spellDisponibles;
 

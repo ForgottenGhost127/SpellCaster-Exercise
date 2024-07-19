@@ -8,7 +8,7 @@ public class Hechizos : MonoBehaviour
     public string hechizoName;
     public float poder;
     public float manaUsed;
-    //public float duracion = 3f;
+    public float duracion;
 
     public GameObject spellPrefab;
     
@@ -26,8 +26,12 @@ public class Hechizos : MonoBehaviour
                 magoScript.RestarMana(manaUsed);
                 print(hechizoName + " lanzado con poder " + poder);
 
-                Instantiate(spellPrefab, mago.transform.position + mago.transform.forward, mago.transform.rotation);
-                //yield return new WaitForSeconds(duracion);
+                GameObject spellInstanciado = Instantiate(spellPrefab, mago.transform.position + mago.transform.forward, mago.transform.rotation);
+
+                HechizoInstanciado hechizoScript = spellInstanciado.AddComponent<HechizoInstanciado>();
+                hechizoScript.poder = this.poder;
+
+                Destroy(spellInstanciado, duracion);
 
 
             }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 215945325160551399}
   - component: {fileID: 7651650044348550641}
   - component: {fileID: 3310735298135548036}
+  - component: {fileID: 9007074473804394274}
   m_Layer: 0
   m_Name: IcySpears
   m_TagString: Untagged
@@ -48,7 +49,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -68,8 +69,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02d576f6d484a148824efa047cd2011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hechizoName: 1
+  hechizoName: IcySpears
   poder: 45
   manaUsed: 20
   duracion: 5
   spellPrefab: {fileID: 1820680284854294, guid: 484a01343a6c37c4e81e7a07a6a85c4d, type: 3}
+--- !u!54 &9007074473804394274
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554446233383371815}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

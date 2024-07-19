@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8448123006143201337}
   - component: {fileID: 8237532314832744801}
   - component: {fileID: 6977800108482272593}
+  - component: {fileID: 5716425105992409378}
   m_Layer: 0
   m_Name: DragonBreath
   m_TagString: Untagged
@@ -48,14 +49,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.8102239
-  m_Height: 3.0096676
+  m_Height: 5.28
   m_Direction: 1
-  m_Center: {x: 0.657763, y: 0.00000011920929, z: 1.0416822}
+  m_Center: {x: 0.657763, y: 1.32, z: 1.0416822}
 --- !u!114 &6977800108482272593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,8 +69,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02d576f6d484a148824efa047cd2011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hechizoName: 0
+  hechizoName: DragonBreath
   poder: 50
   manaUsed: 20
   duracion: 5
   spellPrefab: {fileID: 1634767862067424, guid: 46a68a4b3f849cf4eb934f8a6fa3b501, type: 3}
+--- !u!54 &5716425105992409378
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7621944752429228125}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
