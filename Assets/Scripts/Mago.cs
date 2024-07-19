@@ -8,7 +8,7 @@ public class Mago : MonoBehaviour
     public string nombreMago;
     public float Mana;
     public float velocidad = 5f;
-    
+
     public Hechizos[] spellDisponibles;
 
     private string _name;
@@ -21,31 +21,60 @@ public class Mago : MonoBehaviour
         float moviHorizontal = Input.GetAxis("Horizontal");
 
         Vector3 moverse = new Vector3(moviHorizontal, 0f, moviVertical) * velocidad * Time.deltaTime;
-
         transform.Translate(moverse);
 
-        //Aquí hemos de referir a los Keycode que se usaran para lanzar cada hechizo y controlar el libro (abrir y cerrar)
-
-    }
-
-    public void LanzarHechizo(string hechizoName, float duracion) //Esta función maneja la entrada del jugador (presionar una tecla específica) y la creación/lanzamiento del hechizo correspondiente. 
-    {
-        //Instanciar los tres hechizos para que el mago los pueda llamar incluso si los prefabs no están en el menu Hierarchy.
         
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            LanzarHechizo(0);
+            print("Se ha lanzado 0");
+        }
+        else if (Input.GetKeyDown(KeyCode.I))
+        {
+            LanzarHechizo(1);
+            print("Se ha lanzado 1");
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            LanzarHechizo(2);
+            RecargarMana(45);
+            print("Se ha lanzado 2");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            spellsBook.MostrarHechizosAp();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            spellsBook.CerrarLibro();
+        }
     }
 
-
+    void LanzarHechizo(int index)
+    {
+        if (index < spellDisponibles.Length)
+        {
+            spellDisponibles[index].SpellCasting();
+        }
+        else
+        {
+            Debug.Log("El índice del hechizo está fuera de rango.");
+        }
+    }
 
     public void RestarMana(float cantidad)
     {
         Mana -= cantidad;
     }
+
     public void RecargarMana(float cantidad)
     {
         Mana += cantidad;
-
         Debug.Log("Mana recargado en " + Mana);
     }
 
-    
+
+
+
 }

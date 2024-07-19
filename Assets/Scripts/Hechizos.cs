@@ -8,37 +8,42 @@ public class Hechizos : MonoBehaviour
     public string hechizoName;
     public float poder;
     public float manaUsed;
+    //public float duracion = 3f;
 
-   
-    public GameObject mago;
-
-    public void Awake()
+    public GameObject spellPrefab;
+    
+    public void SpellCasting() 
     {
-        
-    }
-    public void MostrarNombre()
-    {
-        Debug.Log("Nombre del hechizo: " + hechizoName);
-    }
-
-    public void SpellCasting() //Esta función estar enfocada en el comportamiento específico de cada hechizo: daño al enemigo, duración, efectos especiales...
-    {
+        GameObject mago;
+        mago = GameObject.FindGameObjectWithTag("Player");
         Mago magoScript = mago.GetComponent<Mago>();
+        
 
-        if(magoScript.Mana >= manaUsed)
+        if (mago != null)
         {
-            magoScript.RestarMana(manaUsed);
+            if (magoScript.Mana >= manaUsed)
+            {
+                magoScript.RestarMana(manaUsed);
+                print(hechizoName + " lanzado con poder " + poder);
 
-            
+                Instantiate(spellPrefab, mago.transform.position + mago.transform.forward, mago.transform.rotation);
+                //yield return new WaitForSeconds(duracion);
+
+
+            }
+            else
+            {
+                Debug.Log("No tienes suficiente maná.");
+            }
         }
         else
         {
-            Debug.Log("No tienes suficiente maná.");
+            Debug.LogError("El GameObject 'Mago' no está asignado");
         }
+        
         
         
     }
 
-   
 
 }
