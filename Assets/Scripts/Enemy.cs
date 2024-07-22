@@ -13,6 +13,10 @@ public class Enemy : MonoBehaviour
 
     public Transform player;
     
+    public GameObject rewardPref;
+    public Vector3 rewardSpawnOffset = Vector3.zero;
+
+
 
     void Start()
     {
@@ -51,6 +55,14 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Enemy destroyed");
         Destroy(gameObject);
+
+        if (rewardPref != null)
+        {
+            
+            Vector3 rewardPosition = transform.position + rewardSpawnOffset;
+            Instantiate(rewardPref, rewardPosition, Quaternion.identity);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)

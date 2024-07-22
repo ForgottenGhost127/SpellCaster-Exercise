@@ -13,7 +13,15 @@ public class LibroHechizos : MonoBehaviour
     
     public void AprenderHechizo(string hechizoName)
     {
-        //sería un if en referencia a: oncollisionEnter con el objeto en referencia al hechizo que va a aprender, es decir, si colisiona el player con este objeto, el hechizo se añade al libro.
+       if(!hechizosLearned.Contains(hechizoName))
+        {
+            hechizosLearned.Add(hechizoName);
+            print("Has aprendido a usar: " + hechizoName);
+        }
+       else
+        {
+            print("Ya conoces el hechizo: " + hechizoName);
+        }
     }
     public void MostrarHechizosAp()
     {

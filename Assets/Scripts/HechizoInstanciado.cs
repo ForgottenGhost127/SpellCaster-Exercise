@@ -18,8 +18,6 @@ public class HechizoInstanciado : MonoBehaviour
                 Debug.Log("Enemy hit by spell with power " + poder);
             }
 
-            
-            Destroy(gameObject);
         }
     }
 }

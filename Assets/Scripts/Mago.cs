@@ -41,6 +41,11 @@ public class Mago : MonoBehaviour
             RecargarMana(45);
             print("Se ha lanzado 2");
         }
+        //else if (Input.GetKeyDown(KeyCode.U))
+        //{
+        //    LanzarHechizo(3);
+        //    print("Se ha lanzado 3");
+        //}
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -75,7 +80,11 @@ public class Mago : MonoBehaviour
         Debug.Log("Mana recargado en " + Mana);
     }
 
+    //public void AgregarSpell(Hechizos newHechizo)
+    //{
+    //    //Se puede cambiar a una Lista pero no quiero, preguntar a Anxo.
 
+    //}
 
 
 }
