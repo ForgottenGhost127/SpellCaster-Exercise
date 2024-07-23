@@ -9,14 +9,11 @@ public class Enemy : MonoBehaviour
 
     public float speedMovement = 3f;
     public float rangoDeteccion = 10f;
-    
 
     public Transform player;
     
     public GameObject rewardPref;
     public Vector3 rewardSpawnOffset = Vector3.zero;
-
-
 
     void Start()
     {

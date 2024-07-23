@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Mago : MonoBehaviour
 {
-    //Attributes
     public string nombreMago;
     public float Mana;
     public float velocidad = 5f;
@@ -15,7 +14,7 @@ public class Mago : MonoBehaviour
     private string _name;
     private LibroHechizos spellsBook;
 
-    //Methods
+    
     void Update()
     {
         float moviVertical = Input.GetAxis("Vertical");
@@ -82,7 +81,7 @@ public class Mago : MonoBehaviour
 
     //public void AgregarSpell(Hechizos newHechizo)
     //{
-    //    //Se puede cambiar a una Lista pero no quiero, preguntar a Anxo.
+    //    //Podría cambiar a una Lista pero no quiero, preguntar a Anxo.
 
     //}
 

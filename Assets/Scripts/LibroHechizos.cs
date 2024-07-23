@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class LibroHechizos : MonoBehaviour
 {
-    //Attributes
     public List<string> hechizosLearned;
 
     private bool libroAbi = false;
 
-    //Methods
     
     public void AprenderHechizo(string hechizoName)
     {

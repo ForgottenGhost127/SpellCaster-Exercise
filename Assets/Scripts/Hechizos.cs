@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Hechizos : MonoBehaviour
 {
-    //Attributes
     public string hechizoName;
     public float poder;
     public float manaUsed;
