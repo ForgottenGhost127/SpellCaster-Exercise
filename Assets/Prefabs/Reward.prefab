@@ -119,4 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hechizoName: MagnisBlast
+  hechizoPrefab: {fileID: 124434126246180565, guid: f04dd7470849a124b851874c99f6fd30, type: 3}
+  mago: {fileID: 0}
   spellBook: {fileID: 487440105797205498, guid: aaf9c580fe929c84ca7740a43226999e, type: 3}

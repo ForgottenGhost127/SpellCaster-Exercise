@@ -40,11 +40,11 @@ public class Mago : MonoBehaviour
             RecargarMana(45);
             print("Se ha lanzado 2");
         }
-        //else if (Input.GetKeyDown(KeyCode.U))
-        //{
-        //    LanzarHechizo(3);
-        //    print("Se ha lanzado 3");
-        //}
+        else if (Input.GetKeyDown(KeyCode.U))
+        {
+            LanzarHechizo(3);
+            
+        }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -58,9 +58,11 @@ public class Mago : MonoBehaviour
 
     void LanzarHechizo(int index)
     {
+        
         if (index < spellDisponibles.Length)
         {
             spellDisponibles[index].SpellCasting();
+            print("Se ha lanzado 3");
         }
         else
         {
@@ -79,11 +81,12 @@ public class Mago : MonoBehaviour
         Debug.Log("Mana recargado en " + Mana);
     }
 
-    //public void AgregarSpell(Hechizos newHechizo)
-    //{
-    //    //Podría cambiar a una Lista pero no quiero, preguntar a Anxo.
+    public void AgregarSpell(Hechizos newHechizo)
+    {
+        System.Array.Resize(ref spellDisponibles, spellDisponibles.Length + 1);
+        spellDisponibles[spellDisponibles.Length - 1] = newHechizo; 
 
-    //}
+    }
 
 
 }

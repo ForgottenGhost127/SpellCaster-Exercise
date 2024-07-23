@@ -9,14 +9,17 @@ public class Rewards : MonoBehaviour
     public Hechizos hechizoPrefab;
     public Mago mago;
     public LibroHechizos spellBook;
-    
 
+    public void Start()
+    {
+        mago = GameObject.FindGameObjectWithTag("Player").GetComponent<Mago>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
             spellBook.AprenderHechizo(hechizoName);
-            //mago.AgregarSpell(hechizoPrefab);
+            mago.AgregarSpell(hechizoPrefab);
 
             Destroy(gameObject);
         }
