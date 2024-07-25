@@ -13,6 +13,7 @@ public class Rewards : MonoBehaviour
     public void Start()
     {
         mago = GameObject.FindGameObjectWithTag("Player").GetComponent<Mago>();
+        spellBook = GameObject.FindGameObjectWithTag("Libro").GetComponent<LibroHechizos>();
     }
     private void OnTriggerEnter(Collider other)
     {

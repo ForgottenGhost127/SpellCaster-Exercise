@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Spell
   - Enemigo
+  - Magni
+  - Libro
   layers:
   - Default
   - TransparentFX

@@ -47,10 +47,12 @@ public class Mago : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             spellsBook.MostrarHechizosAp();
+            print("Libro abierto");
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             spellsBook.CerrarLibro();
+            print("Libro cerrado");
         }
     }
 
