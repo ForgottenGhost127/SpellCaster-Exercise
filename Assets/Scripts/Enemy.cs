@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public GameObject rewardPref;
     public Vector3 rewardSpawnOffset = Vector3.zero;
 
+    private bool isDestroyed = false;
+
     void Start()
     {
         saludActual = saludMaxima;
@@ -41,7 +43,7 @@ public class Enemy : MonoBehaviour
     public void GetDamaged(float damage)
     {
         saludActual -= damage;
-        if (saludActual <= 0)
+        if (saludActual <= 0 && !isDestroyed)
         {
             GetOwned();
         }
@@ -50,8 +52,11 @@ public class Enemy : MonoBehaviour
 
     void GetOwned()
     {
-        Debug.Log("Enemy destroyed");
-        Destroy(gameObject);
+        if (isDestroyed) return;
+        isDestroyed = true;
+        Debug.Log("Enemy destroyed: " + gameObject.name);
+        
+        
 
         if (rewardPref != null)
         {
@@ -60,6 +65,7 @@ public class Enemy : MonoBehaviour
             Instantiate(rewardPref, rewardPosition, Quaternion.identity);
         }
 
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)

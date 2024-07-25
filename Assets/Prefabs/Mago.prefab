@@ -130,6 +130,7 @@ MonoBehaviour:
   - {fileID: 6977800108482272593, guid: f2409f59c1d13774b9f0b7b8d33dcded, type: 3}
   - {fileID: 3310735298135548036, guid: 8ed0e81246e54fa45a1db266a0bd3bb2, type: 3}
   - {fileID: 3962906769801487386, guid: 362cdb403f08ffb4082bb03e039ef968, type: 3}
+  spellsBook: {fileID: 487440105797205498, guid: aaf9c580fe929c84ca7740a43226999e, type: 3}
 --- !u!54 &6219019693245509354
 Rigidbody:
   m_ObjectHideFlags: 0

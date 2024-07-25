@@ -423,9 +423,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bien, ahora necesitamos que los hechizos los podamos lanzar en la direcci\xF3n
-    que estemos mirando y/o que se mueva con el player durante esos instantes. Revisar
-    porque Reward aparece duplicado."
+  m_text: "Lo \xFAnico que nos faltar\xEDa es en el canvas crear \"el libro\" por
+    as\xED decirlo."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -9,21 +9,19 @@ public class Mago : MonoBehaviour
     public float velocidad = 5f;
     public float vida;
 
+    private float speedRotate = 10f;
+
     public Hechizos[] spellDisponibles;
+    public LibroHechizos spellsBook;
 
     private string _name;
-    private LibroHechizos spellsBook;
+    
 
     
     void Update()
     {
-        float moviVertical = Input.GetAxis("Vertical");
-        float moviHorizontal = Input.GetAxis("Horizontal");
+        MovementPlayer();
 
-        Vector3 moverse = new Vector3(moviHorizontal, 0f, moviVertical) * velocidad * Time.deltaTime;
-        transform.Translate(moverse);
-
-        
         if (Input.GetKeyDown(KeyCode.O))
         {
             LanzarHechizo(0);
@@ -56,13 +54,28 @@ public class Mago : MonoBehaviour
         }
     }
 
+    void MovementPlayer()
+    {
+        float moviVertical = Input.GetAxis("Vertical");
+        float moviHorizontal = Input.GetAxis("Horizontal");
+
+        Vector3 moverse = new Vector3(moviHorizontal, 0f, moviVertical) * velocidad * Time.deltaTime;
+        if(moverse != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(moverse, Vector3.up);
+            transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speedRotate * Time.deltaTime);
+        }
+
+        transform.Translate(moverse, Space.World);
+    }
+
     void LanzarHechizo(int index)
     {
         
         if (index < spellDisponibles.Length)
         {
             spellDisponibles[index].SpellCasting();
-            print("Se ha lanzado 3");
+            
         }
         else
         {

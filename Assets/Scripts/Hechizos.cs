@@ -30,6 +30,8 @@ public class Hechizos : MonoBehaviour
                 HechizoInstanciado hechizoScript = spellInstanciado.AddComponent<HechizoInstanciado>();
                 hechizoScript.poder = this.poder;
 
+                spellInstanciado.transform.SetParent(mago.transform);
+
                 Destroy(spellInstanciado, duracion);
 
 
