@@ -575,15 +575,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Dragon Breath: summons the breath of ancient dragons to scorch your enemies.
+    (Press O)
 
 
-    Icy
-    Spears: frozen spears from the waters around you, even from rain.
+    Icy Spears: frozen spears from the waters around you, even from
+    rain. (Press I)
 
 
-    Fireflies
-    Blessing: one of the special blessings from the Fae. Recovering mana is essential
-    for any mage.'
+    Fireflies Blessing: one of the special blessings from the
+    Fae. Recovering mana is essential for any mage. (Press P)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
@@ -673,7 +673,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Magni''s Blast: the lost thunderbolt of the eldest son of Thor, a powerful
-    blast that''ll fry your enemies.'
+    blast that''ll fry your enemies. (Press U)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
@@ -1121,7 +1121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -86}
+  m_AnchoredPosition: {x: 4, y: -107}
   m_SizeDelta: {x: 450, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8167672315266178886
